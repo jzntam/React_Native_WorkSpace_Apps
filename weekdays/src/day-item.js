@@ -5,7 +5,7 @@ var StyleSheet  = React.StyleSheet;
 var DayItem = React.createClass({
   render: function() {
     return <Text style={ styles.day }>
-      Doooood! Braah! {this.props.day}
+      { this.props.day }
     </Text>
   }
 });
