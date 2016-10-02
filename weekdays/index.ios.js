@@ -1,4 +1,5 @@
 // Import Libraries
+var Moment      = require('moment')
 var React       = require('react-native');
 var AppRegistry = React.AppRegistry;
 var View        = React.View;
@@ -23,7 +24,7 @@ var Weekdays = React.createClass({
   render: function() {
     return <View style={ styles.container }>
       <Text>
-        Days of the week:
+        {Moment().format('dddd')}
       </Text>
       { this.days() }
     </View>
