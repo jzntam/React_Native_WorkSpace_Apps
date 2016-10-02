@@ -23,17 +23,22 @@ var DAYS = [
 var Weekdays = React.createClass({
   render: function() {
     return <View style={ styles.container }>
-      <Text>
-        {Moment().format('dddd')}
-      </Text>
       { this.days() }
     </View>
   },
 
   days: function() {
-    return DAYS.map(function(day, index) {
-      return <DayItem day={ day } key={ index }/>
-    });
+    var dayItems = []
+
+    for(var i = 0; i < 7; i++) {
+      var day = Moment().add(i, 'days').format('dddd');
+
+      dayItems.push(
+        <DayItem day={ day } daysUntil={ i } key= { i }/>
+      )
+    }
+
+    return dayItems
   }
 });
 
