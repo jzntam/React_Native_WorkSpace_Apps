@@ -5,12 +5,27 @@ var View        = React.View;
 var Text        = React.Text;
 var StyleSheet  = React.StyleSheet;
 
+// Import Components
+var DayItem = require('./src/day-item')
+
+var DAYS = [
+  'Sunday',
+  'Monday',
+  'Tuesday',
+  'Wednesday',
+  'Thursday',
+  'Friday',
+  'Saturday'
+]
+
+// Define Main Component
 var Weekdays = React.createClass({
   render: function() {
     return <View style={ styles.container }>
       <Text>
         Days of the week:
       </Text>
+      <DayItem day={ DAYS[0] } />
     </View>
   }
 });
@@ -19,8 +34,8 @@ var Weekdays = React.createClass({
 var styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center'
+    justifyContent: 'center', // Height alignment
+    alignItems: 'center' // Width alignment
   }
 });
 
