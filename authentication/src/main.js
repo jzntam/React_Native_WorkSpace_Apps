@@ -11,11 +11,13 @@ var Parse = require('parse/react-native');
 // Components
 var Signin = require('./components/authentication/signin');
 var Signup = require('./components/authentication/signup');
+var Tweets = require('./components/tweets/tweets');
 
 // Routes
 var ROUTES = {
   signin: Signin,
-  signup: Signup
+  signup: Signup,
+  tweets: Tweets
 };
 
 module.exports = React.createClass({

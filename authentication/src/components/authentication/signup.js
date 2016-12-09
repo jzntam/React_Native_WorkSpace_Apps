@@ -64,12 +64,11 @@ module.exports = React.createClass({
 
     user.signUp(null, {
       success: (user) => {
-        // this.props.navigator.immediatelyResetRouteStack([{ name: 'tweets' }]);
-        console.log(user)
+        // Replace all of the views in the Route Stack
+        this.props.navigator.immediatelyResetRouteStack([{ name: 'tweets' }]);
       },
       error: (user, error) => {
-        // this.setState({ errorMessage: error.message });
-        console.log(user, error)
+        this.setState({ errorMessage: error.message });
       }
     });
   },
