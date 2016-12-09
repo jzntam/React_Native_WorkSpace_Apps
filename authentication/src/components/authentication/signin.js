@@ -40,6 +40,7 @@ module.exports = React.createClass({
 
         <Text style={ styles.label }>{ this.state.errorMessage }</Text>
         <Button text={ 'Sign In' } onPress={ this.onPress } />
+        <Button text={ 'Sign Up for new account' } onPress={ this.onSignupPress } />
       </View>
     )
   },
@@ -53,6 +54,10 @@ module.exports = React.createClass({
         this.setState({ errorMessage: error.message });
       }
     });
+  },
+  onSignupPress: function() {
+    // Navigate to signup
+    this.props.navigator.push({ name: 'signup'})
   }
 })
 
